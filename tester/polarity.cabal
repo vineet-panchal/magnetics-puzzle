@@ -1,0 +1,22 @@
+cabal-version:          2.4
+name:                   polarity
+version:                0.1.0.0
+
+library polarity-lib
+    exposed-modules:    Polarity
+    hs-source-dirs:     lib
+    build-depends:      base >=4.14.3.0, containers, array
+    default-language:   Haskell2010
+
+executable polarity
+    main-is:            Main.hs
+    build-depends:      base >=4.14.3.0, containers, array
+    hs-source-dirs:     app
+    default-language:   Haskell2010
+
+test-Suite polarity-tests
+    type:               exitcode-stdio-1.0
+    main-is:            PolarityTest.hs
+    build-depends:      base, HUnit, polarity-lib, random, array, containers, time
+    hs-source-dirs:     tests
+    default-language:   Haskell2010
